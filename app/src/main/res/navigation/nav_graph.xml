@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/StocksFragment">
+
+    <fragment
+        android:id="@+id/StocksFragment"
+        android:name="bmstu.max.stocks.view.stocks.StocksFragment"
+        android:label="@string/stocks_fragment_label"
+        tools:layout="@layout/fragment_stocks">
+
+        <action
+            android:id="@+id/action_StocksFragment_to_SettingsFragment"
+            app:destination="@id/SettingsFragment" />
+        <action
+            android:id="@+id/action_StocksFragment_to_StockInfoFragment"
+            app:destination="@id/StockInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="bmstu.max.stocks.view.settings.SettingsFragment"
+        android:label="@string/settings_fragment_label"
+        tools:layout="@layout/fragment_settings">
+
+        <action
+            android:id="@+id/action_SettingsFragment_to_StocksFragment"
+            app:destination="@id/StocksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/StockInfoFragment"
+        android:name="bmstu.max.stocks.view.stocks.StockInfoFragment"
+        android:label="@string/stock_info_fragment_label"
+        tools:layout="@layout/fragment_stock_info">
+
+        <action
+            android:id="@+id/action_StockInfoFragment_to_StocksFragment"
+            app:destination="@id/StocksFragment" />
+    </fragment>
+</navigation>
